@@ -1,13 +1,21 @@
-# Enjoy with HTML element Canvas 
+# Enjoy with HTML element Canvas
+
+## Preview
+
+if you had like to try it just CLICK THE IMAGE BELOW  
+[![Beautiful Canvas stuffs](/assets/images/home-page.PNG "Having fun with canvas")](https://ciramor97.github.io/X-GIL-LAB-TEST/)
 
 ## Setup
+
 ```
 git clone https://github.com/Ciramor97/canvas-stuffs.git
 cd canvas-stuffs
 npm i live-server
 live-server
 ```
+
 ## Usage and Operations
+
 - Draw randomly colored rectangles with the mouse.
 - Double-click on a rectangle to rotate it through 360°.
 - At the end of the rotation, delete the rectangle.
