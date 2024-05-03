@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin: 6px 0;
+}
+
+#canvas-container {
+  display: flex;
+  justify-content: center;
+  padding: 0 10px;
+}
+
+
+#canvas {
+  width: 98%;
+  height: calc(100vh - 80px);
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+#canvas[is-drawing] {
+  cursor: crosshair;
+}
+
+
+#actions {
+  display: flex;
+}
+
+.action-btn {
+  margin: 10px;
+  padding: 8px;
+  transition: all 0.2s ease-in;
+  border: 1px solid rgba(0, 0, 0, 0.228);
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.action-btn > span {
+  margin-left: 10px;
+}
+
+.action-btn:hover {
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-weight: bold;
+}
+
+.action-btn > img {
+  width: 20px;
+}
