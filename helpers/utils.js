@@ -10,24 +10,25 @@ function getRandomColor() {
   function findSmallestAreaDiffValues(arr) {
     let n = arr.length;
     let sortedArray = [...arr].sort((a, b) => a - b);
-  
-    let minDiff = Number.MAX_VALUE;
-    let minDiffAreaIdxs = [];
-  
+    const minAreaIndexes = []
+    let minDifference = Number.MAX_VALUE;
+    let minSortedIdx1 = 0
+    
     for (let i = 0; i < n - 1; i++) {
       let currentDiff = Math.abs(sortedArray[i + 1] - sortedArray[i]);
-      if (currentDiff < minDiff) {
-        minDiff = currentDiff;
-  
-        const firstMinDiffAreaIdx = arr.findIndex((el) => el == sortedArray[i]);
-        const secondMinDiffAreaIdx = arr.findIndex(
-          (el) => el == sortedArray[i + 1]
-        );
-  
-        minDiffAreaIdxs = [firstMinDiffAreaIdx, secondMinDiffAreaIdx];
+      if (currentDiff < minDifference) {
+        minDifference = currentDiff;
+        minSortedIdx1 = i
       }
-      return minDiffAreaIdxs;
     }
+
+      arr.forEach((el,index)=>{
+          if(el==sortedArray[minSortedIdx1] || el==sortedArray[minSortedIdx1+1]){
+              minAreaIndexes.push(index)
+          }
+      })
+                  
+      return minAreaIndexes
   }
   
   function toggleCursorStyle() {
