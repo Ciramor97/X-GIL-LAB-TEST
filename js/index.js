@@ -21,7 +21,7 @@ import {
       this.rotation = 0;
       this.isPreview = isPreview;
     }
-    draw(index) {
+    draw() {
       ctx.save();
       ctx.translate(this.x + this.width / 2, this.y + this.height / 2);
       ctx.rotate((this.rotation * Math.PI) / 180);
@@ -30,9 +30,6 @@ import {
       }
       ctx.fillStyle = this.color;
       ctx.fillRect(-this.width / 2, -this.height / 2, this.width, this.height);
-      ctx.fillStyle = "#000000";
-      ctx.font = "20px Arial";
-      ctx.fillText(`${index}`, 0, 0);
       ctx.restore();
     }
     rotateFn(angle) {
@@ -124,7 +121,7 @@ import {
       rectangles.push(newRectangle);
     }
   
-    newRectangle.draw("new");
+    newRectangle.draw();
   
     data.start.x = null;
     data.start.y = null;
@@ -189,11 +186,11 @@ import {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
   
     rectangles.forEach((rectangle, index) => {
-      rectangle.draw(index);
+      rectangle.draw();
     });
   
     if (data.isDrawing) {
-      newRectangle.draw("");
+      newRectangle.draw();
     }
   }
   
